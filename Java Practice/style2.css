@@ -46,7 +46,7 @@
   }
   
   .box:hover {
-    cursor: pointer;
+    cursor: pointer; 
   }
   
   button {

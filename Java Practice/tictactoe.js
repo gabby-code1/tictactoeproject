@@ -36,6 +36,7 @@ let humnaPlayer = Xletter;
       }
     }
   }
+  
 
 
   const gameBoard = () => {

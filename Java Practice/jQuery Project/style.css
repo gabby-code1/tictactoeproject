@@ -1,234 +1,277 @@
-:root {
-    --primary-color: rgb(233, 153, 32);
-    --secondary-color: hsl(202, 83%, 50%);
-    --tertiary-color: #040413;
-    --quaternary-color: #55505C;
-    --hover-color: #21a2e7;
-    --shadow-color: grey(57, 127, 93, 0.4);
-    --font-style: 'Questrial';
-  }
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+body,html {
+  height:100%;
+  margin:0;
+  font-family:lato;
+}
+
+h2 {
+  margin-bottom:0px;
+  margin-top:25px;
+  text-align:center;
+  font-weight:200;
+  font-size:19px;
+  font-size:1.2rem;
   
-  body {
-    font-family: var(--font-style), 'Ranchers', cursive;
-    background-color: var(--secondary-color);
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  h2 {
-    font-size: 3.5rem;
-    text-align: center;
-    color: var(--primary-color);
-  }
-  
-  .mt30 {
-    margin-top: 30px;
-  }
-  
-  .header {
-    padding: 15px;
-  }
-  
-  .main {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .settings {
-  
-    z-index: 1;
-  }
-  
-  .final {
-    visibility: hidden;
-    z-index: 2;
-  }
-  
-  .final p {
-    font-size: 30px;
-    text-align: center;
-  }
-  
-  .final h4 {
-    font-size: 33px;
-    text-align: center;
-  }
-  
-  .quiz  {
-    visibility: hidden;
-    z-index: 0;
-  }
-  
-  #questions {
-    font-size: 20px;
-    font-family: var(--font-style), 'Ranchers', cursive;
-    font-weight: 600;
-    line-height: 1.3;
-    color: white;
-    background-color: var(--primary-color);
-    appearance: none;
-    border: none;
-    padding: 5px;
-    border-radius: 5px;
-    margin-left: 30px;
-    outline: none;
-    text-align: center;
-    width: 120px;
-  }
-  .settings select {
-    font-size: 20px;
-    font-family: var(--font-style), 'Ranchers', cursive;
-    font-weight: 600;
-    line-height: 1.3;
-    letter-spacing: 1px;
-    color: white;
-    background-color: var(--primary-color);
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    border: none;
-    padding: 5px;
-    border-radius: 5px;
-    margin-left: 20px;
-    outline: none;
-    text-align: center;
-  }
-  
-  .settings select::-ms-expand {
-    display: none;
-  }
-  
-  .settings select:hover {
-    border-color: var(--hover-color);
-  }
-  
-  .settings select:focus {
-    border-color: var(--hover-color);
-  }
-  
-  .settings select option {
-    /* font-weight: bolder; */
-    font-family: var(--font-style), 'Ranchers', sans-serif;
-  }
-  
-  .settings label {
-    font-size: 25px;
-    margin-right: 16px;
-  }
-  
-  
-  .quiz, .settings, .final {
-    position: absolute;
-    padding: 0px 35px 35px 35px;
-    max-width: 560px;
-    background-color: var(--tertiary-color);
-    border-radius: 7px;
-    -webkit-box-shadow: 10px 10px 3px -4px var(--shadow-color);
-    -moz-box-shadow: 10px 10px 3px -4px var(--shadow-color);
-    box-shadow: 10px 10px 5px -4px var(--shadow-color);
-  }
-  
-  h3 {
-    display: block;
-    width: 550px;
-    font-size: 35px;
-    font-weight: 350;
-    word-wrap: break-word;
-  }
-  
-  .submit {
+}
+.container {
+  height:100%;
+  -webkit-box-pack:center;
+  -webkit-justify-content:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+  -webkit-box-align:center;
+  -webkit-align-items:center;
+      -ms-flex-align:center;
+          align-items:center;
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  background:-webkit-linear-gradient(#c5e5e5, #ccddf9);
+  background:linear-gradient(#c9e5e9,#ccddf9);
+}
+.dropdown-select.visible {
+  display:block;
+}
+.dropdown {
+  position:relative;
+}
+ul {
+  margin:0;
+  padding:0;
+}
+ul li {
+  list-style:none;
+  padding-left:10px;
+  cursor:pointer;
+}
+ul li:hover {
+  background:rgba(255,255,255,0.1);
+}
+.dropdown-select {
+  position:absolute;
+  background:#77aaee;
+  text-align:left;
+  box-shadow:0px 3px 5px 0px rgba(0,0,0,0.1);
+  border-bottom-right-radius:5px;
+  border-bottom-left-radius:5px;
+  width:90%;
+  left:2px;
+  line-height:2em;
+  margin-top:2px;
+  box-sizing:border-box;
+}
+.thin {
+  font-weight:400;
+}
+.small {
+  font-size:12px;
+  font-size:.8rem;
+}
+.half-input-table {
+  border-collapse:collapse;
+  width:100%;
+}
+.half-input-table td:first-of-type {
+  border-right:10px solid #4488dd;
+  width:50%;
+}
+.window {
+  height:540px;
+  width:800px;
+  background:#fff;
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  box-shadow: 0px 15px 50px 10px rgba(0, 0, 0, 0.2);
+  border-radius:30px;
+  z-index:10;
+}
+.order-info {
+  height:100%;
+  width:50%;
+  padding-left:25px;
+  padding-right:25px;
+  box-sizing:border-box;
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-pack:center;
+  -webkit-justify-content:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+  position:relative;
+}
+.price {
+  bottom:0px;
+  position:absolute;
+  right:0px;
+  color:#4488dd;
+}
+.order-table td:first-of-type {
+  width:25%;
+}
+.order-table {
+    position:relative;
+}
+.line {
+  height:1px;
+  width:100%;
+  margin-top:10px;
+  margin-bottom:10px;
+  background:#ddd;
+}
+.order-table td:last-of-type {
+  vertical-align:top;
+  padding-left:25px;
+}
+.order-info-content {
+  table-layout:fixed;
+
+}
+
+.full-width {
+  width:100%;
+}
+.pay-btn {
+  border:none;
+  background:#22b877;
+  line-height:2em;
+  border-radius:10px;
+  font-size:19px;
+  font-size:1.2rem;
+  color:#fff;
+  cursor:pointer;
+  position:absolute;
+  bottom:25px;
+  width:calc(100% - 50px);
+  -webkit-transition:all .2s ease;
+          transition:all .2s ease;
+}
+.pay-btn:hover {
+  background:#22a877;
+    color:#eee;
+  -webkit-transition:all .2s ease;
+          transition:all .2s ease;
+}
+
+.total {
+  margin-top:25px;
+  font-size:20px;
+  font-size:1.3rem;
+  position:absolute;
+  bottom:30px;
+  right:27px;
+  left:35px;
+}
+.dense {
+  line-height:1.2em;
+  font-size:16px;
+  font-size:1rem;
+}
+.input-field {
+  background:rgba(255,255,255,0.1);
+  margin-bottom:10px;
+  margin-top:3px;
+  line-height:1.5em;
+  font-size:20px;
+  font-size:1.3rem;
+  border:none;
+  padding:5px 10px 5px 10px;
+  color:#fff;
+  box-sizing:border-box;
+  width:100%;
+  margin-left:auto;
+  margin-right:auto;
+}
+.credit-info {
+  background:#4488dd;
+  height:100%;
+  width:50%;
+  color:#eee;
+  -webkit-box-pack:center;
+  -webkit-justify-content:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+  font-size:14px;
+  font-size:.9rem;
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  box-sizing:border-box;
+  padding-left:25px;
+  padding-right:25px;
+  border-top-right-radius:30px;
+  border-bottom-right-radius:30px;
+  position:relative;
+}
+.dropdown-btn {
+  background:rgba(255,255,255,0.1);
+  width:100%;
+  border-radius:5px;
+  text-align:center;
+  line-height:1.5em;
+  cursor:pointer;
+  position:relative;
+  -webkit-transition:background .2s ease;
+          transition:background .2s ease;
+}
+.dropdown-btn:after {
+  content: '\25BE';
+  right:8px;
+  position:absolute;
+}
+.dropdown-btn:hover {
+  background:rgba(255,255,255,0.2);
+  -webkit-transition:background .2s ease;
+          transition:background .2s ease;
+}
+.dropdown-select {
+  display:none;
+}
+.credit-card-image {
+  display:block;
+  max-height:80px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:35px;
+  margin-bottom:15px;
+}
+.credit-info-content {
+  margin-top:25px;
+  -webkit-flex-flow:column;
+      -ms-flex-flow:column;
+          flex-flow:column;
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  width:100%;
+}
+@media (max-width: 600px) {
+  .window {
     width: 100%;
-    color: white;
-    background-color: var(--primary-color);
-    font-family: var(--font-style), 'Ranchers', cursive;
-    outline: none;
-    border: none;
-    height: 50px;
-    font-size: 1.8rem;
-    margin-top: 20px;
-    border-radius: 5px;
-    letter-spacing: 2px;
+    height: 100%;
+    display:block;
+    border-radius:0px;
   }
-  
-  .submit:hover {
-    background-color: var(--hover-color);
-    cursor: pointer;
-    color: #FAF33E;
+  .order-info {
+    width:100%;
+    height:auto;
+    padding-bottom:100px;
+    border-radius:0px;
   }
-  
-  /* The container */
-  .count {
-    display: block;
-    left: 75%;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 100px;
-    cursor: pointer;
+  .credit-info {
+    width:100%;
+    height:auto;
+    padding-bottom:100px;
+    border-radius:0px;
   }
-  
-  .count p {
-    position: absolute;
-    font-size: 35px;
-    
+  .pay-btn {
+    border-radius:0px;
   }
-  
-  .total {
-    margin-left: 50px;
-  }
-  
-  /* The container */
-  .container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 25px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  
-  /* Hide the browser's default radio button */
-  .container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-  }
-  
-  /* Create a custom radio button */
-  .checkmark {
-    position: absolute;
-    top: -2px;
-    left: 0px;
-    height: 25px;
-    width: 25px;
-    background-color: white;
-    border-radius: 30%;
-  }
-  
-  /* On mouse-over, add a grey background color */
-  .container:hover input ~ .checkmark {
-    background-color: #FAF33E;
-  }
-  
-  /* When the radio button is checked, add a blue background */
-  .container input:checked ~ .checkmark {
-    background-color: var(--quaternary-color);
-  }
-  
-  /* Create the indicator (the dot/circle - hidden when not checked) */
-  .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-  
-  /* Show the indicator (dot/circle) when checked */
-  .container input:checked ~ .checkmark:after {
-    display: block;
-  }
-  
+}
